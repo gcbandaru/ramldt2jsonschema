@@ -1,0 +1,454 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "default": "",
+      "examples": ["Bob"],
+      "minLength": 1,
+      "maxLength": 255,
+      "description":"enter firstname"
+    },
+    "middleName": {
+      "type": "string",
+      "default": "",
+      "examples": ["J"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "lastName": {
+      "type": "string",
+      "default": "",
+      "examples": ["Smith"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "namePrefix": {
+      "type": "string",
+      "default": "",
+      "examples": ["Dr"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "nameSuffix": {
+      "type": "string",
+      "default": "",
+      "examples": ["Jr"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "gender": {
+      "type": "string",
+      "default": "",
+      "examples": ["M"],
+      "minLength": 1,
+      "maxLength": 20
+    },
+    "contactType": {
+      "type": "string",
+      "default": "",
+      "examples": ["consumer"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "isOver18": {
+      "type": "boolean",
+      "default": false,
+      "examples": [true]
+    },
+    "dateofBirth": {
+      "type": "string",
+      "default": "",
+      "examples": ["1960-12-10"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "externalID": {
+      "type": "string",
+      "default": "",
+      "examples": ["1111-1111-3232"],
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "interaction": {
+      "type": "object",
+      "properties": {
+        "brandCode": {
+          "type": "string",
+          "default": "",
+          "examples": ["ABILIFY"],
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "vendorCode": {
+          "type": "string",
+          "default": "",
+          "examples": ["OTSUKA"],
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "interactionDateTime": {
+          "type": "string",
+          "default": "",
+          "examples": ["2018-12-10 7:04:34"],
+          "format": "YYYY-MM-DD HH:MM:SS"
+        },
+        "interactionTimeZone": {
+          "type": "string",
+          "default": "",
+          "examples": ["UTC -06:00 Central Time (US and Canada)"],
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "interactionChannel": {
+          "type": "string",
+          "default": "",
+          "examples": ["Web" ],
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "interactionSource": {
+          "type": "string",
+          "default": "",
+          "examples": ["Abilify registration page"],
+          "minLength": 1,
+          "maxLength": 255
+        },
+        "referralURL": {
+          "type": "string",
+          "title": "The Referralurl Schema",
+          "default": "",
+          "examples": [
+            "Abilifi.com"
+          ],
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "mediaCampaignID": {
+          "type": "string",
+          "default": "",
+          "examples": ["Brand-MediaCampaignId"],
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "deviceType": {
+          "type": "string",
+          "default": "",
+          "examples": ["Desktop"],
+          "minLength": 1,
+          "maxLength": 2000
+        }
+      },
+      "required": [
+        "brandCode",
+        "vendorCode",
+        "interactionDateTime",
+        "interactionTimeZone",
+        "interactionChannel",
+        "interactionSource"
+      ]
+    },
+    "email": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "emailAddress": {
+              "type": "string",
+            "default": "",
+            "examples": ["john@doe.com"],
+          "minLength": 1,
+          "maxLength": 255
+            },
+            "emailType": {
+              "type": "string",
+            "default": "",
+            "examples": ["w"],
+            "minLength": 1,
+            "maxLength": 25
+            },
+            "isPrimary": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            },
+            "isActive": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            }
+          },
+          "required": [
+            "emailAddress",
+            "emailType"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "emailAddress": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "emailType": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "isActive": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "emailAddress",
+            "emailType",
+            "isActive"
+          ]
+        }
+      ]
+    },
+    "phone": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "phoneNumber": {
+              "type": "string",
+            "default": "",
+            "examples": ["1234567890"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "phoneType": {
+              "type": "string",
+            "default": "",
+            "examples": ["M"],
+            "minLength": 1,
+            "maxLength": 25
+            },
+            "isActive": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "phoneNumber": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "phoneType": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "isActive": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "address": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "addressLine1": {
+              "type": "string",
+            "default": "",
+            "examples": ["1234 Street"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "addressLine2": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 2"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "addressLine3": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 3"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "city": {
+              "type": "string",
+            "default": "",
+            "examples": ["City"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "state": {
+              "type": "string",
+            "default": "",
+            "examples": ["St"],
+            "minLength": 0,
+            "maxLength": 2
+            },
+            "zip": {
+              "type": "string",
+            "default": "",
+            "examples": ["12345"],
+            "minLength": 1,
+            "maxLength": 50
+            },
+            "zip4": {
+              "type": "string",
+            "default": "",
+            "examples": ["1234"],
+            "minLength": 4,
+            "maxLength": 4
+            },
+            "country": {
+              "type": "string",
+            "default": "",
+            "examples": ["USA"],
+            "minLength": 1,
+            "maxLength": 255
+            },
+            "addressType": {
+              "type": "string",
+            "default": "",
+            "examples": ["H"],
+            "minLength": 1,
+            "maxLength": 25
+            },
+            "isActive": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            }
+          }
+        }
+      ]
+    },
+    "optStatus": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "optCode": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 1"],
+            "minLength": 0,
+            "maxLength": 255
+            },
+            "optChannel": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 2"],
+            "minLength": 0,
+            "maxLength": 255
+            },
+            "optValue": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "optCode": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "optChannel": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "optValue": {
+              "type": "boolean",
+      "minLength": 1,
+      "maxLength": 255
+            }
+          }
+        }
+      ]
+    },
+    "surveyResponse": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "questionCode": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 1"],
+            "minLength": 0,
+            "maxLength": 50
+            },
+            "answerCode": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 2"],
+            "minLength": 0,
+            "maxLength": 50
+            },
+            "answerText": {
+              "type": "string",
+            "default": "",
+            "examples": ["sample string 3"],
+            "minLength": 0,
+            "maxLength": 4000
+            },
+            "isOpenText": {
+              "type": "boolean",
+            "default": false,
+            "examples": [true]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "questionCode": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "answerCode": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "answerText": {
+              "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+            },
+            "isOpenText": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "firstName",
+    "lastName",
+    "isOver18",
+    "interaction",
+    "email"
+  ]
+}
